@@ -1,0 +1,30 @@
+{
+  "name": "@swellaby/get-pkg-version-tests",
+  "description": "Functional tests for our get-pkg-version module",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "exec:cli": "get-pkg-version",
+    "lint": "eslint **/*.js",
+    "clean": "rimraf .testresults",
+    "test": "mocha",
+    "target:remove": "npm r get-pkg-version",
+    "pretarget:install:latest": "npm run target:remove",
+    "target:install:latest": "npm i --no-save get-pkg-version",
+    "pretarget:install": "npm run target:remove",
+    "target:install": "npm i --no-save",
+    "dev:reset": "npm run clean && node -e \"require('rimraf').sync('node_modules');\" && npm run dev:setup",
+    "dev:setup": "npm i && npm run lint"
+  },
+  "devDependencies": {
+    "@swellaby/eslint-config": "^2.0.0",
+    "chai": "^4.2.0",
+    "eslint": "^5.16.0",
+    "mocha": "^6.1.4",
+    "mocha-multi-reporters": "^1.1.7",
+    "rimraf": "^2.6.3",
+    "shelljs": "^0.8.3"
+  },
+  "dependencies": {}
+}

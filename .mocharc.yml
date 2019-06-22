@@ -1,0 +1,6 @@
+ui: 'tdd'
+slow: 7500
+timeout: 10000
+reporter: 'mocha-multi-reporters'
+reporter-options: 'configFile=test/mocha-reporter-config.json'
+spec: './test/*.js'
